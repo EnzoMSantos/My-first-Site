@@ -64,20 +64,67 @@
 
     <fieldset id="endereco">
         <legend>Endereço do Usuário</legend>
-        <p> <label for="cRua">Endereço:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Sua Rua"/> </p>
-        <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" min="0" max="99999"/> </p>
-        <p><label for="cEst">Estado:</label> </p>
+        <p> <label for="cRua">Endereço:</label>
+            <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Sua Rua"/> </p>
+        <p><label for="cNum">Número:</label>
+                <input type="number" name="tNum" id="cNum" min="0" max="99999"/> </p>
+        <p><label for="cEst">Estado:</label> 
         <select name="tEst" id="cEst">
-            <option>Rio de Janeiro</option>
-            <option>São Paulo</option>
-        </select>
-        <p><label for="cCid">Cidade:</label> </p>
+            <optgroup label="Região Norte">
+                <option value="AC">Acre</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="PA">Pará</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="TO">Tocantins</option>
+            </optgroup>
+            <optgroup label="Nordeste">
+                <option value="AL">Alagoas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="MA">Maranhão</option>
+                <option value="PB">Paraíba</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="SE">Sergipe</option>
+            </optgroup>
+            <optgroup label="Região Centro Oeste">
+                <option value="DF">Distrito Federal</option>
+                <option value="GO">Goiás</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+            </optgroup>
+            <optgroup label="Região Sudeste">
+                <option value="ES">Espírito Santo</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="SP">São Paulo</option>
+            </optgroup>
+            <optgroup label="Região Sul">
+                <option value="PR">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="SC">Santa Catarina</option>
+            </optgroup>  
+        </select> </p>
+        <p><label for="cCid">Cidade:</label>
+        <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades">
+        <datalist id="cidades">
+            <option value="Rio de Janeiro"></option>
+            <option value="Nova Iguaçu"></option>
+            <option value="Niterói"></option>
+            <option value="Belford Roxo"></option>
+        </datalist>
+        </p>
     </fieldset>
 
     <fieldset id="mensagem">
         <legend>Mensagem do Usuário</legend>
-        <p><label for="cUrg">Grau de Urgência:</label> </p>
-        <p><label for="cMsg">Mensagem:</label> </p>
+        <p><label for="cUrg">Grau de Urgência:</label>
+        Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Max</p>
+        <p><label for="cMsg">Mensagem:</label>
+        <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua Mensagem!"></textarea></p>
     </fieldset>
 
     <fieldset id="pedido">
